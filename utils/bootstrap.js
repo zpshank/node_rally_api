@@ -48,6 +48,7 @@ module.exports = {
                 firstName: 'John',
                 lastName: 'Hancock',
                 email: 'jh@blah.com',
+                phone: '555-555-5555',
                 field: 1
             })
             .then((entry) => {

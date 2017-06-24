@@ -24,6 +24,10 @@ const Entry = sequelize.define('entry', {
         type: Sequelize.STRING,
         allowNull: false
     },
+    phone: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     field: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -34,7 +38,7 @@ const Timeslot = sequelize.define('timeslot', {
     time: {
         type: Sequelize.DATE
     },
-    max: {
+    fieldCount: {
         type: Sequelize.INTEGER,
         defaultValue: 3
     }

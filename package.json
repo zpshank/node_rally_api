@@ -1,5 +1,5 @@
 {
-  "name": "rally_api",
+  "name": "rally_app",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "lodash": "^4.17.4",
     "mysql2": "^1.3.5",

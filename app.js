@@ -1,23 +1,22 @@
 const _ = require('lodash'),
     Promise = require('bluebird'),
     express = require('express'),
+    bodyParser = require('body-parser'),
     app = express(),
     port = process.env.PORT || 3000,
-    timeslot = require('./controller/timeslot'),
     bootstrap = require('./utils/bootstrap')
 
-const entry = require('./routes/entry')
+// Routes
+const entry = require('./routes/entry'),
+    timeslot = require('./routes/timeslot')
 
 bootstrap.run()
 
-app.use('/entry', entry)
+// Parse body
+app.use(bodyParser.json())
 
-app.get('/timeslot', (req, res, next) => {
-    return timeslot.getAll()
-    .then((timeslots) => {
-        res.json(_.map(timeslots, (timeslot) => {return timeslot.toJSON()}))
-    })
-})
+app.use('/entry', entry)
+app.use('/timeslot', timeslot)
 
 app.listen(port);
 
